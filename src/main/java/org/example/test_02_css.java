@@ -3,6 +3,8 @@ package org.example;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class test_02_css {
     public static void main(String[] args) throws InterruptedException {
         ChromeDriver driver = new ChromeDriver();
@@ -17,6 +19,7 @@ public class test_02_css {
         driver.findElement(By.cssSelector("label[for='textarea']")).isDisplayed();
         driver.findElement(By.cssSelector("input[class='form-check-input'][value='male']")).click();
         driver.findElement(By.cssSelector("input[class*='form-check'][value='female']")).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 
     }
